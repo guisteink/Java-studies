@@ -1,0 +1,17 @@
+import javax.swing.JOptionPane;
+
+public class UsoPonto {
+    public static void main(String[] args) throws Exception {
+        System.out.println("(X   ,Y   )");    
+        double x = Integer.parseInt(JOptionPane.showInputDialog("x: "));
+        double y = Integer.parseInt(JOptionPane.showInputDialog("y: "));
+
+        Ponto A = new Ponto(x, y);
+        A.clonar();
+        System.out.println(A.toString());
+        System.out.println(A.clonar());
+        
+        A.swap();
+        System.out.println(A.toString());
+        
+    }
