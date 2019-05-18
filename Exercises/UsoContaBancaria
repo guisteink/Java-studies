@@ -1,3 +1,4 @@
+package Ex08;
 import javax.swing.JOptionPane;
 
 public class UsoContaBancaria{
@@ -10,7 +11,7 @@ public class UsoContaBancaria{
         System.out.println(A01.toString());
 
         ContaBancaria A02 = new ContaBancaria("gui",200,8);
-        if(A01.VerifyExist(A02.getName())==true)System.out.println("[Conta ja existente]"); //teste 
+        if(A01.compareTo(A02.getName())==true)System.out.println("[Conta ja existente]"); //teste 
         else System.out.println("[Contas diferentes]");
     }
 
