@@ -1,7 +1,8 @@
+package Ex08;
 public class ContaBancaria {
     private String nome;
     private double saldo;
-    private final static double taxadefault = 5;
+    private final static double taxadefault = 5; //%
     private static double taxa = ContaBancaria.taxadefault;
 
     public ContaBancaria() {
@@ -17,7 +18,7 @@ public class ContaBancaria {
     public ContaBancaria(String nome, double saldo, double taxa) throws Exception {
         this.setName(nome);
         this.setSale(saldo);
-        this.setTaxa(taxa);
+        ContaBancaria.setTaxa(taxa);
     }
 
     public void setName(String nome) {
@@ -26,7 +27,7 @@ public class ContaBancaria {
 
     public void setSale(double saldo) throws Exception {
         if (saldo >= 0) {
-            this.saldo = CorrectSale(saldo);
+            this.saldo = ContaBancaria.correctSale(saldo);
         } else
             throw new Exception("Saldo negativo!");
     }
@@ -38,7 +39,7 @@ public class ContaBancaria {
             throw new Exception("Taxa negativa!");
     }
 
-    public double CorrectSale(double saldo) {
+    public static double correctSale(double saldo) {
         double newsale = (1 - (ContaBancaria.taxa) * 0.01) * saldo;
         return newsale;
     }
@@ -51,7 +52,7 @@ public class ContaBancaria {
         return this.saldo;
     }
 
-    public static double getTaxa() {
+    public double getTaxa() {
         return ContaBancaria.taxa;
     }
 
@@ -60,15 +61,15 @@ public class ContaBancaria {
 
     }
 
-    public boolean VerifyExist(String nome) {
-        if (nome.compareToIgnoreCase(this.nome) == 0) {
+    public boolean compareTo(String nome) {
+        if (nome.compareToIgnoreCase(getName()) == 0) {
             return true;
         } else
             return false;
     }
 
     public String toString() {
-        return "Nome: " + this.nome + "\nSaldo da conta: " + this.saldo + "\nA qual foi aplicada uma taxa de: "
-                + this.taxa;
+        return "Nome: " + getName() + "\nSaldo da conta: " + getSaldo() + "\nA qual foi aplicada uma taxa de: "
+                + getTaxa();
     }
 }
