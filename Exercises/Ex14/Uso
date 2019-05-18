@@ -1,0 +1,59 @@
+package Ex14;
+
+import java.util.Scanner;
+
+public class Uso {
+
+	public static void main(String[] args) {
+		final int QTDEMAX = 50; // qtd. maxima de clientes
+		Cliente vetor[] = new Cliente[QTDEMAX]; // vetor de clientes
+
+		// variaveis utilizadas em cada cadastro, temporarias.
+		String descr, nome, endereco, categoria;
+		int opcao;
+		double rendafamiliar;
+
+		System.out.println("Quantas pessoas deseja cadastrar? ");
+		opcao = new Scanner(System.in).nextInt();
+		if (opcao > QTDEMAX) {
+			System.out.println("\n50 cadastros Ã© o maximo por vez");
+			for (int i = 1; i <= QTDEMAX; i++) {
+				System.out.println("Nome: ");
+				nome = new Scanner(System.in).next();
+				System.out.println("Email: ");
+				descr = new Scanner(System.in).next();
+				System.out.println("EndereÃ§o: ");
+				endereco = new Scanner(System.in).next();
+				System.out.println("celular: ");
+				int[] celular = new int[9];
+				for (int j = 1; j <= 9; j++) {
+					celular[j] = new Scanner(System.in).nextInt();
+				}
+				System.out.println("Renda familiar: ");
+				rendafamiliar = new Scanner(System.in).nextDouble();
+				vetor[i] = new Cliente(celular, endereco, rendafamiliar, new Contato(nome, descr));
+
+			}
+		}else {
+			System.out.println(opcao + " cadastros.\n");
+			for (int i = 1; i <= opcao; i++) {
+				System.out.println("Nome: ");
+				nome = new Scanner(System.in).next();
+				System.out.println("Email: ");
+				descr = new Scanner(System.in).next();
+				System.out.println("EndereÃ§o: ");
+				endereco = new Scanner(System.in).next();
+				System.out.println("celular: ");
+				int[] celular = new int[9];
+				for (int j = 1; j <= 9; j++) {
+					celular[j] = new Scanner(System.in).nextInt();
+				}
+				System.out.println("Renda familiar: ");
+				rendafamiliar = new Scanner(System.in).nextDouble();
+				vetor[i] = new Cliente(celular, endereco, rendafamiliar, new Contato(nome, descr));
+		}
+		}
+
+	}
+
+}
