@@ -50,15 +50,18 @@ public class Uso {
 		itens_agenda.insere(lembrete_1);
 		
 		
+		Data datateste1 = new Data("20/05/1850");
+		Data datateste2 = new Data("10/10/2500");
+		System.out.println(itens_agenda.IntervaloDeData(datateste1, datateste2));
 		
 		
-		 System.out.println(itens_agenda.toString());
+		 //System.out.println(itens_agenda.toString());
 
-		itens_agenda.remove(evento_1);
+		//itens_agenda.remove(evento_1);
 
 		// System.out.println(itens_agenda.toString());
 
-		//System.out.println(itens_agenda.itensMetas());
+		//System.out.println(itens_agenda.itensEventos());
 
 		int menu = 1000;
 		String registro, descricao;
@@ -224,3 +227,4 @@ public class Uso {
 		}
 	}
 }
+
