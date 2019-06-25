@@ -58,7 +58,7 @@ public class Agenda {
 	}
 
 	/**
-	 * Metodo pra inserÁao de itens na agenda
+	 * Metodo pra inser√ßao de itens na agenda
 	 * 
 	 * @param _item
 	 * @throws Exception
@@ -77,7 +77,7 @@ public class Agenda {
 		if (this.getAgenda().contains(_item) == true) {
 			this.getAgenda().remove(_item);
 		} else
-			new Exception("\nItem n„o esta contido na agenda.");
+			new Exception("\nItem n√£o esta contido na agenda.");
 	}
 
 	/**
@@ -89,12 +89,12 @@ public class Agenda {
 	 * @return List
 	 * @throws Exception
 	 */
-	public List<ItemAgenda> IntervaloDeData(Data dt_inicio, Data dt_fim) throws Exception {
+	public List<ItemAgenda> IntervaloDeData(Data _inicial, Data _final) throws Exception {
 		int i;
 		List<ItemAgenda> itens_data = new LinkedList<ItemAgenda>();
 		for (i = 0; i < this.itens_agenda.size(); i++) {
-			if (this.itens_agenda.get(i).getPeriodo().getDataInicio().compareTo(dt_inicio) == 1
-					&& this.itens_agenda.get(i).getPeriodo().getDataFim().compareTo(dt_fim) == 1) {
+			if (this.getAgenda().get(i).getPeriodo().getDataInicio().compareTo(_inicial) != -1
+					&& this.getAgenda().get(i).getPeriodo().getDataFim().compareTo(_final) != 1) {
 				itens_data.add(this.itens_agenda.get(i));
 			}
 		}
